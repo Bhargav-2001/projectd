@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: flex-end;
     position: absolute;
+    margin-top: 60px;
     top: 20px;
     right: 20px;
     width: 250px;
@@ -11,7 +12,9 @@
     border-radius: 4px;
     padding: 4px;
   }
-  
+  ul {
+    list-style-type: none;
+  }
   
   .place {
     flex: 1;

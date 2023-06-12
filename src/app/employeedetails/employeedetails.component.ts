@@ -16,6 +16,9 @@ export class EmployeeDetailsComponent implements OnInit {
     private router: Router,
     private ar: ActivatedRoute
   ) {}
+  handleButtonClick() {
+    this.router.navigate(['search']);
+  }
 
   ngOnInit() {
     this.ar.params.subscribe(params => {

@@ -8,7 +8,9 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
   { path: 'search', component: SearchbarComponent },
-  { path: 'details/:empid', component: EmployeeDetailsComponent }
+  { path: 'details/:empid', component: EmployeeDetailsComponent },
+  { path: 'search', component: SearchbarComponent }
+  
 ];
 
 @NgModule({
