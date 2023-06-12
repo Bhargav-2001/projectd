@@ -1,16 +1,43 @@
-
 <div class="search-bar">
-    
-    <input type="text" [(ngModel)]="searchQuery" (input)="onInputChange()" placeholder="Search Employee" class="place" />
-    
-    <mat-icon class="search-icon">search</mat-icon>
-    
-  </div> 
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Enter ID or Name" class="place" />
+  <mat-icon class="search-icon" (click)="onSearch()">search</mat-icon>
+</div>
+
 <ul>
-  <li *ngFor="let employee of employees" [hidden]="!employee.visible">
-    <p>Employee ID: {{ employee['Employee ID'] }}</p>
-    <p>Employee Name: {{ employee['Employee Name'] }}</p>
-    <p>Dedalus ID: {{ employee['Dedalus ID'] }}</p>
+  <li *ngFor="let employee of employees, let i = index" [hidden]="!employee.visible">
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card box-shadow" [ngClass]="{'card-half-color': i % 2 === 0}">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  
+                  <h5 class="card-title">Employee Name</h5>
+                  <p>Job Title: {{employee['HL Title']}}</p>
+                
+                  <p>{{ employee['Employee Name'] }}</p>
+                  <div class="vertical-line"></div>
+                </div>
+                <div class="col-md-4">
+                 
+                  <h5 class="card-title">Employee ID</h5><br><br>
+                
+                  <p>{{ employee['Employee ID'] }}</p>
+                  <div class="vertical-line"></div>
+                </div>
+                <div class="col-md-4">
+                  
+                  <h5 class="card-title">Click for Details</h5><br><br>
+                 
+                  <a (click)="navigateToEmployeeDetails(i)" class="btn btn-primary ml-4">Link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </li>
- 
+  <li *ngIf="showNoEmployeesFound && searchQuery.length > 0">No employee details found.</li>
 </ul>

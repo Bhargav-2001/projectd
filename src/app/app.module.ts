@@ -12,11 +12,13 @@ import { MatInputModule } from '@angular/material/input';
 
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeDetailsComponent } from './employeedetails/employeedetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchbarComponent
+  SearchbarComponent,
+  EmployeeDetailsComponent
   ],
   imports: [
 
