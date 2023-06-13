@@ -32,9 +32,9 @@ empid:any;
   
   onSearch() {
     if (this.searchQuery.length >= 3) {
-      this.employees.forEach((employee,index) => {
+      this.employees.forEach((employee, index) => {
         const query = this.searchQuery.toLowerCase();
-        this.index=index;
+        this.index = index;
         const employeeId = employee['Employee ID']?.toString().toLowerCase();
         const employeeName = employee['Employee Name']?.toString().toLowerCase();
         const dedalusId = employee['Dedalus ID']?.toString().toLowerCase();
@@ -43,15 +43,21 @@ empid:any;
           employeeName?.includes(query) ||
           dedalusId?.includes(query);
       });
-
+  
       this.showNoEmployeesFound = this.employees.every(employee => !employee.visible);
     } else {
+      // Show alert for minimum 3 characters
+      alert('Minimum 3 characters required for search.');
+  
+      // Clear search query and reset visibility
+      this.searchQuery = '';
       this.employees.forEach(employee => {
-        this.index=-1;
+        this.index = -1;
         employee.visible = false;
       });
       this.showNoEmployeesFound = false;
     }
   }
+  
   
 }

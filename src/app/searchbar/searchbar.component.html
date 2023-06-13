@@ -1,6 +1,17 @@
-<div class="search-bar">
-  <input type="text" [(ngModel)]="searchQuery" placeholder="Enter ID or Name" class="place" />
-  <mat-icon class="search-icon" (click)="onSearch()">search</mat-icon>
+<div class="d-flex" style="margin-top: 90px; width: 300px; margin-left: 950px;">
+
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Enter ID or Name" class="form-control" />
+
+  <div class="input-group-append">
+
+    <button class="btn btn-primary" type="button" (click)="onSearch()">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+    </button>
+
+  </div>
+
 </div>
 
 <ul>
