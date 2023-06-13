@@ -46,10 +46,10 @@ empid:any;
   
       this.showNoEmployeesFound = this.employees.every(employee => !employee.visible);
     } else {
-      // Show alert for minimum 3 characters
+      
       alert('Minimum 3 characters required for search.');
   
-      // Clear search query and reset visibility
+      
       this.searchQuery = '';
       this.employees.forEach(employee => {
         this.index = -1;

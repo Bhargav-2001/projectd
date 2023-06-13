@@ -21,36 +21,49 @@
     <div class="container">
       <div class="row justify-content-center mt-5">
         <div class="col-md-6">
-          <div class="card box-shadow" >
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-4">
-                  
+          <div class="card box-shadow">
+            <div style="padding-left: 12px;padding-right: 12px;">
+              <div class="row" style="background-color: gray;">
+                 <div class="col-md-4 bg-gray" style="border: 1px solid black;align-items: center; text-align: center;"> 
                   <h5 class="card-title">Employee Name</h5>
                   <p><b>Job Title</b>: {{employee['HL Title']}}</p>
-                
-                  <p>{{ employee['Employee Name'] }}</p>
-                  <div class="vertical-line"></div>
-                </div>
-                <div class="col-md-4">
-                 
-                  <h5 class="card-title">Employee ID</h5><br><br>
-                
-                  <p>{{ employee['Employee ID'] }}</p>
-                  <div class="vertical-line"></div>
-                </div>
-                <div class="col-md-4">
                   
-                  <h5 class="card-title">Click for Details</h5><br><br>
-                 
-                  <a (click)="navigateToEmployeeDetails(i)" class="btn btn-primary ml-4">Link</a>
+                 </div> 
+                <div class="col-md-4 bg-gray" style="border: 1px solid black;">
+                  <div class="cmd">
+                    <h5 class="card-title">Employee ID</h5><br><br>
+                  </div>
+                
+                </div>
+                <div class="col-md-4" style="border: 1px solid black;">
+                  <div class="cmd">
+                    <h5 class="card-title">Click for Details</h5><br><br>
+                  </div> 
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-4 bg-gray" style="border: 1px solid black; align-items: center;">
+                
+                <p>{{ employee['Employee Name'] }}</p>
+                  <div class="vertical-line"></div>
+                </div>
+                <div class="col-md-4 bg-gray" style="border: 1px solid black;">
+                  
+                  <p>{{ employee['Employee ID'] }}</p>
+                  </div>
+                  <div class="col-md-4 bg-gray" style="border: 1px solid black; ">
+                 
+                  <a (click)="navigateToEmployeeDetails(i)" class="btn btn-primary ml-4" style="margin-top: 10px;margin-left: 30px;">Link</a>
+                  
+                  </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
+    
   </li>
   <li *ngIf="showNoEmployeesFound && searchQuery.length > 0">No employee details found.</li>
 </ul>

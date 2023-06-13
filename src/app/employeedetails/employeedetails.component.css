@@ -12,8 +12,10 @@ button {
   }
 
   .row{
+    
     justify-content: center;
   }
+  
   .custom-card {
     width: 80%;
     margin: 0 auto;
