@@ -1,38 +1,37 @@
 .card-title{
-    text-align: center;
-    justify-content: center;
+  text-align: center;
+  justify-content: center;
 }
 button {
-    background-color: rgb(144, 190, 219);
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-  }
+  background-color: rgb(144, 190, 219);
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
 
-  .row{
-    
-    justify-content: center;
-  }
+.row{
   
-  .custom-card {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .card-title {
-    position: relative;
-  }
-  
-  .icon {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    cursor: pointer;
-  }
+  justify-content: center;
+}
 
-  
-  
-  
-  
- 
+.custom-card {
+  width: 80%;
+  margin: 0 auto;
+}
+.card-title {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+
+
+
+

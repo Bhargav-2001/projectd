@@ -2,26 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface Employee {
-'CSC_DoJ':any;
-  'Employee ID': any;
-  'Employee Name': any;
-  'Dedalus ID': any;
-  'HL Designation':any;
-  'Location':any;
-  'HL Role':any;
-  'HL Title':any;
-  'Mail Id':any;
-  'Manager Email':any;
-  'Owning':any;
-  'Product':any;
-  'Product Group':any;
-  'Product Work Area':any;
-  'Reporting Manager':any;
-  'Unified Roles':any;
+ export interface Employee { 
+  'CSC_DoJ':any;
+   'Employee ID': any;
+  'EmployeeName': any;
+   'Dedalus ID': any;
+   'HL Designation':any;
+   'Location':any;
+   'HL Role':any;
+   'HL Title':any;
+   'Employee_MailId':any;
+   'Manager Email':any;
+   'Owning':any;
+   'Product':any;
+   'Product Group':any;
+   'Product Work Area':any;
+   'Reporting Manager':any;
+   'Unified Roles':any;
   'Unit':any;
-  'Work Group':any;
-  visible: boolean;
+   'Work Group':any;
+   visible: boolean;
 
 }
 
@@ -29,11 +29,11 @@ export interface Employee {
   providedIn: 'root'
 })
 export class EmployeeService {
-  private dataUrl = 'https://myapi-b7ad2-default-rtdb.asia-southeast1.firebasedatabase.app/data.json';
+  private dataUrl = 'http://nhsappchna6210.cscidp.net/rdb/api/employee?co=';
 
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(this.dataUrl);
+  getData(id:any): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.dataUrl+id);
   }
 }

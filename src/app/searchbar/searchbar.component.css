@@ -29,7 +29,7 @@
   }
   
   .custom-card {
-    height: 250px; /* Increase the height as desired */
+    height: 250px; 
   }
   
   .custom-card-heading {
@@ -50,7 +50,7 @@
   .custom-card {
     height: 250px;
   
-       /* Increase the height as desired */
+       
   }
   
   .custom-card-header {
@@ -91,4 +91,7 @@
     transform: translateX(-50%);
   }
   
+  .card-title{
+    text-align: center;
   
+  }

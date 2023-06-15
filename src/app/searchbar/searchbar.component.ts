@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService, Employee } from '../employee.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
@@ -9,55 +10,33 @@ import { Router } from '@angular/router';
 export class SearchbarComponent implements OnInit {
   searchQuery: string = '';
   employees: Employee[] = [];
-  index:number=-1;
   showNoEmployeesFound: boolean = false;
-empid:any;
-  constructor(private employeeService: EmployeeService,private router: Router) {}
 
-  ngOnInit() {
-    this.employeeService.getData().subscribe(data => {
-      console.log(data);
-      if (typeof data === 'object') {
-        const dataArray = Object.values(data);
-        this.employees = dataArray.map(employee => ({ ...employee, visible: false }));
-        console.log("data after", this.employees);
-      } else {
-        console.error('Invalid data format: Expected an object.', data);
-      }
-    });
+  constructor(private employeeService: EmployeeService, private router: Router) {}
+
+  ngOnInit() {}
+
+  navigateToEmployeeDetails(employee:any) {
+    this.router.navigate(['/details', employee.EmployeeCode]);
   }
-  navigateToEmployeeDetails(employeeId: any) {
-    this.router.navigate(['/details', employeeId]);
-  }
-  
+
   onSearch() {
     if (this.searchQuery.length >= 3) {
-      this.employees.forEach((employee, index) => {
-        const query = this.searchQuery.toLowerCase();
-        this.index = index;
-        const employeeId = employee['Employee ID']?.toString().toLowerCase();
-        const employeeName = employee['Employee Name']?.toString().toLowerCase();
-        const dedalusId = employee['Dedalus ID']?.toString().toLowerCase();
-        employee.visible =
-          employeeId?.includes(query) ||
-          employeeName?.includes(query) ||
-          dedalusId?.includes(query);
-      });
-  
-      this.showNoEmployeesFound = this.employees.every(employee => !employee.visible);
+      this.employeeService.getData(this.searchQuery).subscribe(
+        (data: Employee[]) => {
+          this.employees = data;
+          this.showNoEmployeesFound = this.employees.length === 0;
+        },
+        (error) => {
+          console.error('Error fetching employee data:', error);
+          this.employees = [];
+          this.showNoEmployeesFound = true;
+        }
+      );
     } else {
-      
-      alert('Minimum 3 characters required for search.');
-  
-      
-      this.searchQuery = '';
-      this.employees.forEach(employee => {
-        this.index = -1;
-        employee.visible = false;
-      });
+      alert("Minimum 3 Characters Required for search")
+      this.employees = [];
       this.showNoEmployeesFound = false;
     }
   }
-  
-  
 }

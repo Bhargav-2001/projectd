@@ -5,19 +5,16 @@
         <div class="card-body">
           <h5 class="card-title">
             Employee Details
-            <i class="fa-sharp fa-solid fa-circle-xmark icon" (click)="handleButtonClick()"></i>
+            <i class="fa-sharp fa-solid fa-circle-xmark icon" (click)="handleButtonClick()"></i><br><br>
           </h5>
-                      
-
-
             <div class="row">
               <div class="col-md-6">
                 <h6 class="card-subtitle">Employee Name</h6>
-                <p>{{ employee['Employee Name'] }}</p>
+                <p>{{ employee['EmployeeName'] }}</p>
               </div>
               <div class="col-md-6">
-                <h6 class="card-subtitle">Employee ID</h6>
-                <p>{{ employee['Employee ID'] }}</p>
+                <h6 class="card-subtitle" >Employee ID</h6>
+                <p>{{ employee['EmployeeCode'] }}</p>
               </div>
             </div>
             <hr>
@@ -34,12 +31,12 @@
             <hr>
             <div class="row">
               <div class="col-md-6">
-                <h6 class="card-subtitle">DOB</h6>
-                <p>{{ employee['CSC_DoJ'] }}</p>
+                <h6 class="card-subtitle">Gender</h6>
+                <p>{{ employee['Gender'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Product Group</h6>
-                <p>{{ employee['Product Group'] }}</p>
+                <p>{{ employee['ProductGroup'] }}</p>
               </div>
             </div>
             <hr>
@@ -47,44 +44,44 @@
             <div class="row">
               <div class="col-md-6">
                 <h6 class="card-subtitle">Product Work Area</h6>
-                <p>{{ employee['Product Work Area'] }}</p>
+                <p>{{ employee['ProductWorkArea'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">HL Role</h6>
-                <p>{{ employee['HL Role'] }}</p>
+                <p>{{ employee['HLRole'] }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-6">
                 <h6 class="card-subtitle">Reporting Manager</h6>
-                <p>{{ employee['Reporting Manager'] }}</p>
+                <p>{{ employee['ManagerName'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Manager Email</h6>
-                <p>{{ employee['Manager Email'] }}</p>
+                <p>{{ employee['ManagerMailId'] }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-6">
                 <h6 class="card-subtitle">Dedalus ID</h6>
-                <p>{{ employee['Dedalus ID'] }}</p>
+                <p>{{ employee['DedalusId'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Mail ID</h6>
-                <p>{{ employee['Mail Id'] }}</p>
+                <p>{{ employee['Employee_MailId'] }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-6">
                 <h6 class="card-subtitle">HL Designation</h6>
-                <p>{{ employee['HL Designation'] }}</p>
+                <p>{{ employee['HLDesignation'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">HL Title</h6>
-                <p>{{ employee['HL Title'] }}</p>
+                <p>{{ employee['HLTitle'] }}</p>
               </div>
               
             </div>
@@ -107,7 +104,7 @@
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Work Group</h6>
-                <p>{{ employee['Work Group'] }}</p>
+                <p>{{ employee['WorkGroup'] }}</p>
               </div>
             </div>
           </div>
