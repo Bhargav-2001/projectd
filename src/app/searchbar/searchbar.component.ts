@@ -11,18 +11,17 @@ export class SearchbarComponent implements OnInit {
   searchQuery: string = '';
   employees: Employee[] = [];
   showNoEmployeesFound: boolean = false;
+  searchClicked: boolean = false;
 
   constructor(private employeeService: EmployeeService, private router: Router) {}
 
   ngOnInit() {}
 
-
-  change(){
-    this.employees=[];
-    this.showNoEmployeesFound=false;
+  change() {
+    this.searchClicked = false;
   }
 
-  navigateToEmployeeDetails(employee:any) {
+  navigateToEmployeeDetails(employee: any) {
     this.router.navigate(['/details', employee.EmployeeCode]);
   }
 
@@ -32,17 +31,20 @@ export class SearchbarComponent implements OnInit {
         (data: Employee[]) => {
           this.employees = data;
           this.showNoEmployeesFound = this.employees.length === 0;
+          this.searchClicked = true;
         },
         (error) => {
           console.error('Error fetching employee data:', error);
           this.employees = [];
           this.showNoEmployeesFound = true;
+          this.searchClicked = true;
         }
       );
     } else {
-      alert("Minimum 3 Characters Required for search")
+      alert("Minimum 3 characters are required for search");
       this.employees = [];
       this.showNoEmployeesFound = false;
+      this.searchClicked = true;
     }
   }
 }

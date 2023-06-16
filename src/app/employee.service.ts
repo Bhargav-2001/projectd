@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
    'HL Designation':any;
    'Location':any;
    'HL Role':any;
-   'HL Title':any;
+   'HLTitle':any;
    'Employee_MailId':any;
    'Manager Email':any;
    'Owning':any;

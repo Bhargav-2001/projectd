@@ -7,52 +7,23 @@
   </div>
 </div>
 
+<div style="margin-top: 60px; margin-left: auto; margin-right: auto; width: 50%; text-align: center; padding: 10px;" [style.border]="searchClicked ? '1px solid black' : 'none'">
+  <table class="table" *ngIf="employees.length > 0">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Email ID</th>
+        <th>Click for Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee['EmployeeName'] }}</td>
+        <td>{{ employee['Employee_MailId'] }}</td>
+        <td><a (click)="navigateToEmployeeDetails(employee)" #employee class="btn btn-primary ml-4">view details</a></td>
+      </tr>
+    </tbody>
+  </table>
 
-
-<ul>
-  <li *ngFor="let employee of employees, let i = index," >
-    <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-6">
-      <div class="card box-shadow">
-        <div style="padding-left: 12px; padding-right: 12px;">
-          <div class="row" style="background-color: lightgray;">
-            <div class="col-md-4 bg-gray" style="border: 1px solid black; align-items: center; text-align: center;">
-              <h5 class="card-title">Employee Name</h5>
-              <p>{{ employee['HL Title'] }}</p>
-            </div>
-            <div class="col-md-4 bg-gray" style="border: 1px solid black;">
-              <div class="cmd">
-                <h5 class="card-title">Email ID</h5><br><br>
-              </div>
-            </div>
-            <div class="col-md-4" style="border: 1px solid black;">
-              <div class="cmd">
-                <h5 class="card-title">Click for Details</h5><br><br>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 bg-gray" style="border: 1px solid black; align-items: center; padding: 5px;">
-              <p>{{ employee['EmployeeName'] }}</p>
-              <div class="vertical-line"></div>
-            </div>
-            <div class="col-md-4 bg-gray" style="border: 1px solid black; padding: 5px;">
-              <p>{{ employee['Employee_MailId'] }}</p>
-            </div>
-            <div class="col-md-4 bg-gray" style="border: 1px solid black; padding: 5px;">
-              <a (click)="navigateToEmployeeDetails(employee)" #employee class="btn btn-primary ml-4" style="margin-top: 8px; margin-left: 20px;">view-details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p *ngIf="searchClicked && employees.length === 0">No employee details found.</p>
 </div>
-
-    
-    
-  </li>
-  <li *ngIf="showNoEmployeesFound">No employee details found.</li>
-</ul>
-
