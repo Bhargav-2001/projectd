@@ -44,7 +44,7 @@ export class SearchbarComponent implements OnInit {
       alert("Minimum 3 characters are required for search");
       this.employees = [];
       this.showNoEmployeesFound = false;
-      this.searchClicked = true;
+      this.searchClicked = false;
     }
   }
 }
