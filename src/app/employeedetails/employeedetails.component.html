@@ -8,10 +8,12 @@
             <i class="fa-sharp fa-solid fa-circle-xmark icon" (click)="handleButtonClick()"></i><br><br>
           </h5>
             <div class="row">
+              
               <div class="col-md-6">
                 <h6 class="card-subtitle">Employee Name</h6>
                 <p>{{ employee['EmployeeName'] }}</p>
               </div>
+              
               <div class="col-md-6">
                 <h6 class="card-subtitle" >Employee ID</h6>
                 <p>{{ employee['EmployeeCode'] }}</p>
@@ -20,8 +22,8 @@
             <hr>
             <div class="row">
               <div class="col-md-6">
-                <h6 class="card-subtitle">Gender</h6>
-                <p>{{ employee['Gender'] }}</p>
+                <h6 class="card-subtitle">Dedalus ID</h6>
+                <p>{{ employee['DedalusId'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Location</h6>
@@ -31,8 +33,8 @@
             <hr>
             <div class="row">
               <div class="col-md-6">
-                <h6 class="card-subtitle">Gender</h6>
-                <p>{{ employee['Gender'] }}</p>
+                <h6 class="card-subtitle">Mail ID</h6>
+                <p>{{ employee['Employee_MailId'] }}</p>
               </div>
               <div class="col-md-6">
                 <h6 class="card-subtitle">Product Group</h6>
@@ -64,13 +66,14 @@
             </div>
             <hr>
             <div class="row">
+            
+                <div class="col-md-6">
+                  <h6 class="card-subtitle">OID</h6>
+                  <p>{{ employee['OID'] }}</p>
+                </div>
               <div class="col-md-6">
-                <h6 class="card-subtitle">Dedalus ID</h6>
-                <p>{{ employee['DedalusId'] }}</p>
-              </div>
-              <div class="col-md-6">
-                <h6 class="card-subtitle">Mail ID</h6>
-                <p>{{ employee['Employee_MailId'] }}</p>
+                <h6 class="card-subtitle">Gender</h6>
+                <p>{{ employee['Gender'] }}</p>
               </div>
             </div>
             <hr>
@@ -106,7 +109,27 @@
                 <h6 class="card-subtitle">Work Group</h6>
                 <p>{{ employee['WorkGroup'] }}</p>
               </div>
+              <hr>
+              <div class="col-md-6">
+                <h6 class="card-subtitle">ManagerCode</h6>
+                <p>{{ employee['ManagerCode'] }}</p>
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-subtitle">DateofJoin</h6>
+                <p>{{ employee['DateofJoin'] }}</p>
+              </div>
+              <hr>
+              <div class="col-md-6">
+                <h6 class="card-subtitle">Product</h6>
+                <p>{{ employee['Product'] }}</p>
+              </div>
+              <div class="col-md-6">
+                <h6 class="card-subtitle">UnifiedRoles</h6>
+                <p>{{ employee['UnifiedRoles'] }}</p>
+              </div>
             </div>
+            
+            
           </div>
         </div>
       </div>

@@ -16,6 +16,12 @@ export class SearchbarComponent implements OnInit {
 
   ngOnInit() {}
 
+
+  change(){
+    this.employees=[];
+    this.showNoEmployeesFound=false;
+  }
+
   navigateToEmployeeDetails(employee:any) {
     this.router.navigate(['/details', employee.EmployeeCode]);
   }
