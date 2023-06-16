@@ -31,5 +31,5 @@
     </tbody>
   </table>
  
-  <p *ngIf="searchClicked && employees.length === 0">No employee details found.</p>
+  <p *ngIf="searchClicked && employees.length === 0 && !searchErrorMessage">No employee details found.</p>
 </div>
