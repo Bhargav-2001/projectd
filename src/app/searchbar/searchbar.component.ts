@@ -12,6 +12,7 @@ export class SearchbarComponent implements OnInit {
   employees: Employee[] = [];
   showNoEmployeesFound: boolean = false;
   searchClicked: boolean = false;
+  searchErrorMessage: string = '';
 
   constructor(private employeeService: EmployeeService, private router: Router) {}
 
@@ -19,6 +20,9 @@ export class SearchbarComponent implements OnInit {
 
   change() {
     this.searchClicked = false;
+    if (this.searchQuery.length >= 3) {
+      this.searchErrorMessage = '';
+    }
   }
 
   navigateToEmployeeDetails(employee: any) {
@@ -40,11 +44,12 @@ export class SearchbarComponent implements OnInit {
           this.searchClicked = true;
         }
       );
+      this.searchErrorMessage = '';
     } else {
-      alert("Minimum 3 characters are required for search");
       this.employees = [];
       this.showNoEmployeesFound = false;
       this.searchClicked = false;
+      this.searchErrorMessage = 'Minimum 3 characters are required for search.';
     }
   }
 }

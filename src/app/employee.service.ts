@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
  export interface Employee { 
-  'CSC_DoJ':any;
-   'Employee ID': any;
+  
+ 
   'EmployeeName': any;
    'Dedalus ID': any;
    'HL Designation':any;
@@ -15,13 +15,8 @@ import { Observable } from 'rxjs';
    'Manager Email':any;
    'Owning':any;
    'Product':any;
-   'Product Group':any;
-   'Product Work Area':any;
-   'Reporting Manager':any;
-   'Unified Roles':any;
-  'Unit':any;
-   'Work Group':any;
-   visible: boolean;
+  
+   
 
 }
 

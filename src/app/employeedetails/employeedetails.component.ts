@@ -31,7 +31,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   readData(OID: any) {
     if (OID) {
-      console.log("hello", OID);
+      
       this.fs.getDetails(OID).subscribe(
         (employee: Employee) => {
           this.employee = employee;
