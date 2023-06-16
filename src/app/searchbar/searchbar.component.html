@@ -12,14 +12,18 @@
     <thead>
       <tr>
         <th>Employee Name</th>
+        <th>Job Role</th>
         <th>Email ID</th>
+        
         <th>Click for Details</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let employee of employees">
         <td>{{ employee['EmployeeName'] }}</td>
+        <td>{{ employee['HLRole'] }}</td>
         <td>{{ employee['Employee_MailId'] }}</td>
+        
         <td><a (click)="navigateToEmployeeDetails(employee)" #employee class="btn btn-primary ml-4">view details</a></td>
       </tr>
     </tbody>

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
    'Dedalus ID': any;
    'HL Designation':any;
    'Location':any;
-   'HL Role':any;
+   'HLRole':any;
    'HLTitle':any;
    'Employee_MailId':any;
    'Manager Email':any;
